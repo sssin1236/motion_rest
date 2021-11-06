@@ -101,6 +101,7 @@
                 width: calc(250px * 5); height: 100%;
                 position: relative;
                 right: -47%;
+                transition: 1s;
 
                 &::after{
                     content: ''; display: block; clear: both;
