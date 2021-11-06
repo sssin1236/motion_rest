@@ -84,94 +84,97 @@ a {
         left: 0;
         font: bold 14px/1 'arial';
         color: #333; }
-    #visual .inner .wrap {
+    #visual .inner .textBox {
       width: 100%;
       height: 420px;
       position: absolute;
       bottom: 0;
       left: 0%;
       overflow: hidden; }
-      #visual .inner .wrap .rolling {
-        width: calc(250px * 5);
-        height: 100%;
-        position: relative;
-        right: -47%;
-        transition: 1s; }
-        #visual .inner .wrap .rolling::after {
-          content: '';
+      #visual .inner .textBox .text {
+        width: 160px;
+        height: 378px;
+        position: absolute;
+        top: 50%;
+        padding: 50px 0;
+        transform: translate(-50%, -50%);
+        z-index: 2; }
+        #visual .inner .textBox .text:nth-of-type(1) {
+          left: 47%; }
+        #visual .inner .textBox .text:nth-of-type(2) {
+          left: calc(47% + 250px); }
+        #visual .inner .textBox .text:nth-of-type(3) {
+          left: calc(47% + 500px); }
+        #visual .inner .textBox .text:nth-of-type(4) {
+          left: calc(47% + 750px); }
+        #visual .inner .textBox .text:nth-of-type(5) {
+          left: calc(47% + 1000px); }
+        #visual .inner .textBox .text > p {
+          font: 14px/1 'arial';
+          color: #ff5b20;
+          margin-top: 30px;
+          margin-bottom: 20px;
+          z-index: 2; }
+        #visual .inner .textBox .text h3 {
+          font: bold 28px/1.4 "Rajdhani";
+          color: #111;
+          z-index: 2;
+          border-bottom: 1.5px solid #333;
+          padding-bottom: 20px;
+          margin-bottom: 20px; }
+        #visual .inner .textBox .text span {
           display: block;
-          clear: both; }
-        #visual .inner .wrap .rolling article {
-          width: 250px;
-          height: 90%;
-          float: left;
+          width: 100%;
           position: relative;
-          transition: 0.5s; }
-          #visual .inner .wrap .rolling article:hover .pic video {
-            opacity: 0.9; }
-          #visual .inner .wrap .rolling article:hover .text p {
-            color: #fff; }
-          #visual .inner .wrap .rolling article:hover .text h3 {
-            color: #fff;
-            border-bottom: 1.5px solid #fff; }
-          #visual .inner .wrap .rolling article:hover .text span a, #visual .inner .wrap .rolling article:hover .text i {
-            color: #fff; }
-          #visual .inner .wrap .rolling article .pic {
+          z-index: 2; }
+          #visual .inner .textBox .text span:hover a {
+            font-size: 14px; }
+          #visual .inner .textBox .text span:hover i {
+            transform: translateX(-20px); }
+          #visual .inner .textBox .text span a {
+            font: 13px/1 'arial';
+            color: #222;
+            transition: 0.5s; }
+            #visual .inner .textBox .text span a i {
+              font-size: 14px;
+              color: #222;
+              position: absolute;
+              top: 50%;
+              right: 0px;
+              margin-top: -6px;
+              transition: 0.5s; }
+    #visual .inner .rolling {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      transition: 1s; }
+      #visual .inner .rolling::after {
+        content: '';
+        display: block;
+        clear: both; }
+      #visual .inner .rolling article {
+        width: 250px;
+        height: 90%;
+        position: absolute;
+        top: 0px;
+        left: 0;
+        transition: 0.5s; }
+        #visual .inner .rolling article:hover .pic video {
+          opacity: 0.9; }
+        #visual .inner .rolling article .pic {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1; }
+          #visual .inner .rolling article .pic video {
             width: 100%;
             height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1; }
-            #visual .inner .wrap .rolling article .pic video {
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-              transition: all 0.5s;
-              opacity: 0;
-              filter: brightness(0.5); }
-          #visual .inner .wrap .rolling article .text {
-            width: 160px;
-            height: 100%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            padding: 50px 0;
-            transform: translate(-50%, -50%);
-            z-index: 2; }
-            #visual .inner .wrap .rolling article .text > p {
-              font: 14px/1 'arial';
-              color: #ff5b20;
-              margin-top: 30px;
-              margin-bottom: 20px;
-              z-index: 2; }
-            #visual .inner .wrap .rolling article .text h3 {
-              font: bold 28px/1.4 "Rajdhani";
-              color: #111;
-              z-index: 2;
-              border-bottom: 1.5px solid #333;
-              padding-bottom: 20px;
-              margin-bottom: 20px; }
-            #visual .inner .wrap .rolling article .text span {
-              display: block;
-              width: 100%;
-              position: relative;
-              z-index: 2; }
-              #visual .inner .wrap .rolling article .text span:hover a {
-                font-size: 14px; }
-              #visual .inner .wrap .rolling article .text span:hover i {
-                transform: translateX(-20px); }
-              #visual .inner .wrap .rolling article .text span a {
-                font: 13px/1 'arial';
-                color: #222;
-                transition: 0.5s; }
-                #visual .inner .wrap .rolling article .text span a i {
-                  font-size: 14px;
-                  color: #222;
-                  position: absolute;
-                  top: 50%;
-                  right: 0px;
-                  margin-top: -6px;
-                  transition: 0.5s; }
+            object-fit: cover;
+            transition: all 0.5s;
+            opacity: 0;
+            filter: brightness(0.5); }
 
 /*# sourceMappingURL=style.css.map */
