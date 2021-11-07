@@ -180,5 +180,7 @@ a {
         clip-path: polygon(84%, 86%); }
       #visual .rolling article:nth-of-type(4) {
         clip-path: polygon(86%, 88%); }
+      #visual .rolling article:nth-of-type(5) {
+        clip-path: polygon(88%, 90%); }
 
 /*# sourceMappingURL=style.css.map */
