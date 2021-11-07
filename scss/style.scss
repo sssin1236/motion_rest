@@ -7,6 +7,7 @@
     height: 100vh;
     background: #efefef;
     position: relative;
+    overflow: hidden;
 
     >.pic{
         width: 100%; height: 100%;
@@ -97,76 +98,124 @@
             bottom: 0; left: 0%;
             overflow: hidden;
 
-            .text{
-                width: 160px; height: 378px;
+            >article{
+                width: 250px; height: 90%;
+                float: left;
                 position: absolute;
-                top: 50%;
-                padding: 50px 0;
+                top: 45%;
                 transform: translate(-50%, -50%);
                 z-index: 2;
 
-                &:nth-of-type(1){ left: 55%; }
-                &:nth-of-type(2){ left: calc(55% + 250px); }
-                &:nth-of-type(3){ left: calc(55% + 500px); }
-                &:nth-of-type(4){ left: calc(55% + 750px); }
-                &:nth-of-type(5){ left: calc(55% + 1000px); }
+                &:nth-of-type(1){ left: 58%; }
+                &:nth-of-type(2){ left: calc(58% + 250px); }
+                &:nth-of-type(3){ left: calc(58% + 500px); }
+                &:nth-of-type(4){ left: calc(58% + 750px); }
+                &:nth-of-type(5){ left: calc(58% + 1000px); }
+    
+                &:hover{
+                    .pic video{
+                        opacity: 0.9;
+                    }
 
-                >p{
-                    font: 14px/1 'arial';
-                    color: $mainCol;
-                    margin-top: 30px;
-                    margin-bottom: 20px;
-                    z-index: 2;
+                    .text{
+                        p{
+                            color: #fff;
+                        }
+
+                        h3{
+                            color: #fff;
+                            border-bottom: 1.5px solid #fff; 
+                        }
+
+                        span a, i{
+                            color: #fff;
+                        }
+                    }
                 }
 
-                h3{
-                    font: bold 28px/1.4 $mainFon;
-                    color: #111;
+                >.pic{
+                    width: 100%; height: 100%;
+                    position: absolute;
+                    top: 0; left: 0;
+                    z-index: 1;
+                    
+                    video{
+                        width: 100%; height: 100%;
+                        object-fit: cover;
+                        transition: all 0.5s;
+                        opacity: 0;
+                        filter: brightness(0.5);
+                    }
+                }
+
+                .text{
+                    width: 160px; height: 100%;
+                    position: absolute;
+                    top: 50%; left: 50%;
+                    padding: 50px 0;
+                    transform: translate(-50%, -50%);
                     z-index: 2;
-                    border-bottom: 1.5px solid #333;
-                    padding-bottom: 20px;
-                    margin-bottom: 20px;
+
+                    >p{
+                        font: 14px/1 'arial';
+                        color: $mainCol;
+                        margin-top: 30px;
+                        margin-bottom: 20px;
+                        z-index: 2;
+                    }
+    
+                    h3{
+                        font: bold 28px/1.4 $mainFon;
+                        color: #111;
+                        z-index: 2;
+                        border-bottom: 1.5px solid #333;
+                        padding-bottom: 20px;
+                        margin-bottom: 20px;
+                    }
+                    
+                    span{
+                        display: block;
+                        width: 100%;
+                        position: relative;
+                        z-index: 2;
+
+                        &:hover{
+                            a{
+                                font-size: 14px;
+                            }
+
+                            i{
+                                transform: translateX(-20px);
+                            }
+                        }
+    
+                        a{
+                            font: 13px/1 'arial';
+                            color: #222;
+                            transition: 0.5s;
+    
+                            i{
+                                font-size: 14px;
+                                color: #222;
+                                position: absolute;
+                                top: 50%; right:0px;
+                                margin-top: -6px;
+                                transition: 0.5s;
+                            }
+                        }
+                    }
                 }
                 
-                span{
-                    display: block;
-                    width: 100%;
-                    position: relative;
-                    z-index: 2;
-
-                    &:hover{
-                        a{
-                            font-size: 14px;
-                        }
-
-                        i{
-                            transform: translateX(-20px);
-                        }
-                    }
-
-                    a{
-                        font: 13px/1 'arial';
-                        color: #222;
-                        transition: 0.5s;
-
-                        i{
-                            font-size: 14px;
-                            color: #222;
-                            position: absolute;
-                            top: 50%; right:0px;
-                            margin-top: -6px;
-                            transition: 0.5s;
-                        }
-                    }
-                }
             }
+            
         }
 
     }
 
     .rolling{
         width: 100%; height: 100vh;
-        position: relative;
+        position: absolute;
+        top: 0px; left: 0px;
         overflow: hidden;
         transition: 1s;
 
@@ -187,38 +236,36 @@
                 width: 100%; height: 100%;
                 position: absolute;
                 top: 0; left: 0;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
                 transition: 1s;
+                z-index: 3;
                 
                 video{
                     width: 100%; height: 100%;
                     object-fit: cover;
-                    transition: all 0.5s;
-                    opacity: 0;
+                    transition: all 1s;
+                    opacity: 1;
                     filter: brightness(0.5);
                 }
             }
 
-            &:nth-of-type(1) .pic{
-                clip-path: polygon(80% , 82%,);
+            &:nth-of-type(1) .pic video{
+                clip-path: polygon(70% 80%, 74% 80%, 74% 90%, 70% 90%);
             }
             
-            &:nth-of-type(2) .pic{
-                clip-path: polygon(82% , 84%,);
+            &:nth-of-type(2) .pic video{
+                clip-path: polygon(74% 80%, 78% 80%, 78% 90%, 74% 90%);
             }
 
-            &:nth-of-type(3) .pic{
-                clip-path: polygon(84% , 86%,);
+            &:nth-of-type(3) .pic video{
+                clip-path: polygon(78% 80%, 82% 80%, 82% 90%, 78% 90%);
             }
 
-            &:nth-of-type(4) .pic{
-                clip-path: polygon(86% , 88%,);
+            &:nth-of-type(4) .pic video{
+                clip-path: polygon(82% 80%, 86% 80%, 86% 90%, 82% 90%);
             }
 
-            &:nth-of-type(5) .pic{
-                clip-path: polygon(88% , 90%,);
+            &:nth-of-type(5) .pic video{
+                clip-path: polygon(86% 80%, 90% 80%, 90% 90%, 86% 90%);
             }
         }
     }

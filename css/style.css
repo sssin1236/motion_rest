@@ -15,7 +15,8 @@ a {
   width: 100%;
   height: 100vh;
   background: #efefef;
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
   #visual > .pic {
     width: 100%;
     height: 100%;
@@ -91,62 +92,96 @@ a {
       bottom: 0;
       left: 0%;
       overflow: hidden; }
-      #visual .inner .textBox .text {
-        width: 160px;
-        height: 378px;
+      #visual .inner .textBox > article {
+        width: 250px;
+        height: 90%;
+        float: left;
         position: absolute;
-        top: 50%;
-        padding: 50px 0;
+        top: 45%;
         transform: translate(-50%, -50%);
         z-index: 2; }
-        #visual .inner .textBox .text:nth-of-type(1) {
-          left: 55%; }
-        #visual .inner .textBox .text:nth-of-type(2) {
-          left: calc(55% + 250px); }
-        #visual .inner .textBox .text:nth-of-type(3) {
-          left: calc(55% + 500px); }
-        #visual .inner .textBox .text:nth-of-type(4) {
-          left: calc(55% + 750px); }
-        #visual .inner .textBox .text:nth-of-type(5) {
-          left: calc(55% + 1000px); }
-        #visual .inner .textBox .text > p {
-          font: 14px/1 'arial';
-          color: #ff5b20;
-          margin-top: 30px;
-          margin-bottom: 20px;
-          z-index: 2; }
-        #visual .inner .textBox .text h3 {
-          font: bold 28px/1.4 "Rajdhani";
-          color: #111;
-          z-index: 2;
-          border-bottom: 1.5px solid #333;
-          padding-bottom: 20px;
-          margin-bottom: 20px; }
-        #visual .inner .textBox .text span {
-          display: block;
+        #visual .inner .textBox > article:nth-of-type(1) {
+          left: 58%; }
+        #visual .inner .textBox > article:nth-of-type(2) {
+          left: calc(58% + 250px); }
+        #visual .inner .textBox > article:nth-of-type(3) {
+          left: calc(58% + 500px); }
+        #visual .inner .textBox > article:nth-of-type(4) {
+          left: calc(58% + 750px); }
+        #visual .inner .textBox > article:nth-of-type(5) {
+          left: calc(58% + 1000px); }
+        #visual .inner .textBox > article:hover .pic video {
+          opacity: 0.9; }
+        #visual .inner .textBox > article:hover .text p {
+          color: #fff; }
+        #visual .inner .textBox > article:hover .text h3 {
+          color: #fff;
+          border-bottom: 1.5px solid #fff; }
+        #visual .inner .textBox > article:hover .text span a, #visual .inner .textBox > article:hover .text i {
+          color: #fff; }
+        #visual .inner .textBox > article > .pic {
           width: 100%;
-          position: relative;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1; }
+          #visual .inner .textBox > article > .pic video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s;
+            opacity: 0;
+            filter: brightness(0.5); }
+        #visual .inner .textBox > article .text {
+          width: 160px;
+          height: 100%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          padding: 50px 0;
+          transform: translate(-50%, -50%);
           z-index: 2; }
-          #visual .inner .textBox .text span:hover a {
-            font-size: 14px; }
-          #visual .inner .textBox .text span:hover i {
-            transform: translateX(-20px); }
-          #visual .inner .textBox .text span a {
-            font: 13px/1 'arial';
-            color: #222;
-            transition: 0.5s; }
-            #visual .inner .textBox .text span a i {
-              font-size: 14px;
+          #visual .inner .textBox > article .text > p {
+            font: 14px/1 'arial';
+            color: #ff5b20;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            z-index: 2; }
+          #visual .inner .textBox > article .text h3 {
+            font: bold 28px/1.4 "Rajdhani";
+            color: #111;
+            z-index: 2;
+            border-bottom: 1.5px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 20px; }
+          #visual .inner .textBox > article .text span {
+            display: block;
+            width: 100%;
+            position: relative;
+            z-index: 2; }
+            #visual .inner .textBox > article .text span:hover a {
+              font-size: 14px; }
+            #visual .inner .textBox > article .text span:hover i {
+              transform: translateX(-20px); }
+            #visual .inner .textBox > article .text span a {
+              font: 13px/1 'arial';
               color: #222;
-              position: absolute;
-              top: 50%;
-              right: 0px;
-              margin-top: -6px;
               transition: 0.5s; }
+              #visual .inner .textBox > article .text span a i {
+                font-size: 14px;
+                color: #222;
+                position: absolute;
+                top: 50%;
+                right: 0px;
+                margin-top: -6px;
+                transition: 0.5s; }
   #visual .rolling {
     width: 100%;
     height: 100vh;
-    position: relative;
+    position: absolute;
+    top: 0px;
+    left: 0px;
     overflow: hidden;
     transition: 1s; }
     #visual .rolling article {
@@ -165,26 +200,24 @@ a {
         position: absolute;
         top: 0;
         left: 0;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        transition: 1s; }
+        transition: 1s;
+        z-index: 3; }
         #visual .rolling article .pic video {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          transition: all 0.5s;
-          opacity: 0;
+          transition: all 1s;
+          opacity: 1;
           filter: brightness(0.5); }
-      #visual .rolling article:nth-of-type(1) .pic {
-        clip-path: polygon(80%, 82%); }
-      #visual .rolling article:nth-of-type(2) .pic {
-        clip-path: polygon(82%, 84%); }
-      #visual .rolling article:nth-of-type(3) .pic {
-        clip-path: polygon(84%, 86%); }
-      #visual .rolling article:nth-of-type(4) .pic {
-        clip-path: polygon(86%, 88%); }
-      #visual .rolling article:nth-of-type(5) .pic {
-        clip-path: polygon(88%, 90%); }
+      #visual .rolling article:nth-of-type(1) .pic video {
+        clip-path: polygon(70% 80%, 74% 80%, 74% 90%, 70% 90%); }
+      #visual .rolling article:nth-of-type(2) .pic video {
+        clip-path: polygon(74% 80%, 78% 80%, 78% 90%, 74% 90%); }
+      #visual .rolling article:nth-of-type(3) .pic video {
+        clip-path: polygon(78% 80%, 82% 80%, 82% 90%, 78% 90%); }
+      #visual .rolling article:nth-of-type(4) .pic video {
+        clip-path: polygon(82% 80%, 86% 80%, 86% 90%, 82% 90%); }
+      #visual .rolling article:nth-of-type(5) .pic video {
+        clip-path: polygon(86% 80%, 90% 80%, 90% 90%, 86% 90%); }
 
 /*# sourceMappingURL=style.css.map */
