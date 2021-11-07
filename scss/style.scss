@@ -201,7 +201,9 @@
                 clip-path: polygon(80% , 82%,);
             }
             
-            
+            &:nth-of-type(2){
+                clip-path: polygon(82% , 84%,);
+            }
         }
     }
 }
