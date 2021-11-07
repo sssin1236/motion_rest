@@ -197,6 +197,9 @@
                 }
             }
 
+            &:nth-of-type(1){
+                clip-path: polygon(80% , 82%,);
+            }
             
             
         }

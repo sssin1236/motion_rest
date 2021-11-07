@@ -172,5 +172,7 @@ a {
           transition: all 0.5s;
           opacity: 0;
           filter: brightness(0.5); }
+      #visual .rolling article:nth-of-type(1) {
+        clip-path: polygon(80%, 82%); }
 
 /*# sourceMappingURL=style.css.map */
