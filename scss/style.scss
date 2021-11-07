@@ -175,6 +175,7 @@
             position: absolute;
             top: 0px; left: 0;
             transition: 0.5s;
+            z-index: 1;
 
             &:hover{
                 .pic video{

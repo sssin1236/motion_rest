@@ -155,7 +155,8 @@ a {
       position: absolute;
       top: 0px;
       left: 0;
-      transition: 0.5s; }
+      transition: 0.5s;
+      z-index: 1; }
       #visual .rolling article:hover .pic video {
         opacity: 0.9; }
       #visual .rolling article .pic {
