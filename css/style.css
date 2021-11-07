@@ -143,38 +143,34 @@ a {
               right: 0px;
               margin-top: -6px;
               transition: 0.5s; }
-    #visual .inner .rolling {
+  #visual .rolling {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    transition: 1s; }
+    #visual .rolling article {
       width: 100%;
       height: 100%;
-      position: relative;
-      overflow: hidden;
-      transition: 1s; }
-      #visual .inner .rolling::after {
-        content: '';
-        display: block;
-        clear: both; }
-      #visual .inner .rolling article {
-        width: 250px;
-        height: 90%;
+      position: absolute;
+      top: 0px;
+      left: 0;
+      transition: 0.5s; }
+      #visual .rolling article:hover .pic video {
+        opacity: 0.9; }
+      #visual .rolling article .pic {
+        width: 100%;
+        height: 100%;
         position: absolute;
-        top: 0px;
+        top: 0;
         left: 0;
-        transition: 0.5s; }
-        #visual .inner .rolling article:hover .pic video {
-          opacity: 0.9; }
-        #visual .inner .rolling article .pic {
+        z-index: 1; }
+        #visual .rolling article .pic video {
           width: 100%;
           height: 100%;
-          position: absolute;
-          top: 0;
-          left: 0;
-          z-index: 1; }
-          #visual .inner .rolling article .pic video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: all 0.5s;
-            opacity: 0;
-            filter: brightness(0.5); }
+          object-fit: cover;
+          transition: all 0.5s;
+          opacity: 0;
+          filter: brightness(0.5); }
 
 /*# sourceMappingURL=style.css.map */
