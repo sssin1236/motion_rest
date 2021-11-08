@@ -1,5 +1,5 @@
 $(".textBox>article").on("click", function(){
-    let i = $(".rolling>article").index();
+    let i = $(this).index();
     $(this).appendTo(".textBox");
     $(".rolling>article").eq(i).appendTo(".rolling");
     
