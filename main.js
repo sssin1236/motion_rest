@@ -1,7 +1,15 @@
 $(".textBox>article").on("click", function(){
+    let i = $(".rolling>article").index();
     $(this).appendTo(".textBox");
-    $(".rolling>article").first().appendTo(".rolling");
+    $(".rolling>article").eq(i).appendTo(".rolling");
+    
+    $("article.upper").removeClass("upper").addClass("lower");
+    $(".rolling>article").eq(i).addClass("upper");
+    
+    setTimeout(function(){
+        $("article.lower").removeClass("lower");
+    }, 1000);
 
     let vid = $(this).find("video").attr("src");
-    console.log(vid);
+    $(".rolling>article").children().find("video").attr({ src: vid });
 });

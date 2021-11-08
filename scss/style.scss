@@ -23,7 +23,7 @@
         margin: 0 auto;
         padding-top: 170px;
         position: relative;
-        z-index: 2;
+        z-index: 4;
 
         h1{
             font: bold 70px/1 'arial';
@@ -107,7 +107,7 @@
                 top: 45%;
                 transform: translate(-50%, -50%);
                 transition: 1s;
-                z-index: 2;
+                z-index: 4;
 
                 &:nth-of-type(1){ left: 58%; }
                 &:nth-of-type(2){ left: calc(58% + 250px); }
@@ -234,7 +234,7 @@
                 top: 0; left: 0;
                 transition: 1.5s;
                 z-index: 0;
-                opacity: 0;
+                opacity: 1;
                 
                 video{
                     width: 100%; height: 100%;
@@ -246,29 +246,50 @@
                 clip-path: polygon(50% 65%, 61% 65%, 61% 85%, 50% 85%);
             }
             
-            // &:nth-of-type(2) .pic {
-            //     clip-path: polygon(63% 57%, 78% 57%, 78% 98%, 63% 98%);
-            // }
+            &:nth-of-type(2) .pic {
+                clip-path: polygon(61% 65%, 72% 65%, 72% 85%, 61% 85%);
+            }
 
-            // &:nth-of-type(3) .pic {
-            //     clip-path: polygon(78% 57%, 93% 57%, 93% 98%, 78% 98%);
-            // }
+            &:nth-of-type(3) .pic {
+                clip-path: polygon(72% 65%, 83% 65%, 83% 85%, 72% 85%);
+            }
 
-            // &:nth-of-type(4) .pic {
-            //     clip-path: polygon(93% 57%, 108% 57%, 108% 98%, 93% 98%);
-            // }
-            // &:nth-of-type(5) .pic {
-            //     clip-path: polygon(108% 57%, 113% 57%, 113% 98%, 108% 98%);
-            // }
+            &:nth-of-type(4) .pic {
+                clip-path: polygon(83% 65%, 94% 65%, 94% 85%, 83% 85%);
+            }
+            &:nth-of-type(5) .pic {
+                clip-path: polygon(94% 65%, 105% 65%, 105% 85%, 94% 85%);
+            }
 
-            &.upper{
-
-                >.pic{
+            &.upper, &.lower{
+                &:nth-of-type(1) .pic{
                     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
                     opacity: 1;
                 }
                 
+                &:nth-of-type(2) .pic{
+                    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+                    opacity: 1;
+                }
+
+                &:nth-of-type(3) .pic{
+                    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+                    opacity: 1;
+                }
+
+                &:nth-of-type(4) .pic{
+                    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+                    opacity: 1;
+                }
+
+                &:nth-of-type(5) .pic{
+                    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+                    opacity: 1;
+                }
             }
+
+            &.upper{ z-index: 2; }
+            &.lower{ z-index: 1; }
         }
     }
 }
