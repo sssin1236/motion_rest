@@ -15,6 +15,7 @@
         top: 0; left: 0;
         background: url(../img/visual1.jpg) no-repeat center/cover;
         opacity: 0.1;
+        z-index: 1;
     }
 
     .inner{
@@ -22,6 +23,7 @@
         margin: 0 auto;
         padding-top: 170px;
         position: relative;
+        z-index: 2;
 
         h1{
             font: bold 70px/1 'arial';
@@ -138,7 +140,7 @@
                     width: 100%; height: 100%;
                     position: absolute;
                     top: 0; left: 0;
-                    z-index: 1;
+                    z-index: 2;
                     
                     video{
                         width: 100%; height: 100%;
@@ -217,50 +219,55 @@
         width: 100%; height: 100vh;
         position: absolute;
         top: 0px; left: 0px;
-        overflow: hidden;
         transition: 1s;
 
         article{
             width: 100%; height: 100%;
             position: absolute;
             top: 0px; left: 0;
-            transition: 0.5s;
+            transition: 1s;
             z-index: 1;
 
-            .pic{
+            >.pic{
                 width: 100%; height: 100%;
                 position: absolute;
                 top: 0; left: 0;
-                transition: 1s;
-                z-index: 3;
+                transition: 1.5s;
+                z-index: 0;
+                opacity: 0;
                 
                 video{
                     width: 100%; height: 100%;
                     object-fit: cover;
-                    transition: all 1s;
-                    opacity: 1;
-                    filter: brightness(0.5);
                 }
             }
 
-            &:nth-of-type(1) .pic video{
-                clip-path: polygon(70% 80%, 74% 80%, 74% 90%, 70% 90%);
+            &:nth-of-type(1) .pic {
+                clip-path: polygon(50% 65%, 61% 65%, 61% 85%, 50% 85%);
             }
             
-            &:nth-of-type(2) .pic video{
-                clip-path: polygon(74% 80%, 78% 80%, 78% 90%, 74% 90%);
-            }
+            // &:nth-of-type(2) .pic {
+            //     clip-path: polygon(63% 57%, 78% 57%, 78% 98%, 63% 98%);
+            // }
 
-            &:nth-of-type(3) .pic video{
-                clip-path: polygon(78% 80%, 82% 80%, 82% 90%, 78% 90%);
-            }
+            // &:nth-of-type(3) .pic {
+            //     clip-path: polygon(78% 57%, 93% 57%, 93% 98%, 78% 98%);
+            // }
 
-            &:nth-of-type(4) .pic video{
-                clip-path: polygon(82% 80%, 86% 80%, 86% 90%, 82% 90%);
-            }
+            // &:nth-of-type(4) .pic {
+            //     clip-path: polygon(93% 57%, 108% 57%, 108% 98%, 93% 98%);
+            // }
+            // &:nth-of-type(5) .pic {
+            //     clip-path: polygon(108% 57%, 113% 57%, 113% 98%, 108% 98%);
+            // }
 
-            &:nth-of-type(5) .pic video{
-                clip-path: polygon(86% 80%, 90% 80%, 90% 90%, 86% 90%);
+            &.upper{
+
+                >.pic{
+                    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+                    opacity: 1;
+                }
+                
             }
         }
     }
