@@ -97,8 +97,14 @@
         .textBox{
             width: 100%; height: 420px;
             position: absolute;
-            bottom: 0; left: 0%;
+            bottom: 0; left: 100%;
             overflow: hidden;
+            transition: 1.5s;
+
+            &.on{
+                left: 0;
+                opacity: 1;
+            }
 
             >article{
                 width: 250px; height: 90%;

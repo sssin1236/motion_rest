@@ -92,8 +92,12 @@ a {
       height: 420px;
       position: absolute;
       bottom: 0;
-      left: 0%;
-      overflow: hidden; }
+      left: 100%;
+      overflow: hidden;
+      transition: 1.5s; }
+      #visual .inner .textBox.on {
+        left: 0;
+        opacity: 1; }
       #visual .inner .textBox > article {
         width: 250px;
         height: 90%;
