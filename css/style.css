@@ -236,4 +236,211 @@ a {
       #visual .rolling article.lower {
         z-index: 2; }
 
+#visual2 {
+  width: 100%;
+  height: 100vh;
+  border-top: 1px solid #111;
+  background: #efefef;
+  position: relative;
+  overflow: hidden; }
+  #visual2 > .pic {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../img/visual1.jpg) no-repeat center/cover;
+    opacity: 0.1;
+    z-index: 1; }
+  #visual2 .inner {
+    width: 1180px;
+    height: 100vh;
+    margin: 0 auto;
+    padding-top: 170px;
+    position: relative;
+    z-index: 4; }
+    #visual2 .inner h1 {
+      font: bold 70px/1 'arial';
+      color: #111;
+      margin-bottom: 20px; }
+    #visual2 .inner > p {
+      width: 40%;
+      font: 16px/1.7 'arial';
+      color: #555; }
+    #visual2 .inner .list {
+      width: 53%;
+      height: 270px;
+      padding: 30px;
+      position: absolute;
+      top: 190px;
+      right: 0;
+      background: #111; }
+      #visual2 .inner .list::after {
+        content: '';
+        display: block;
+        clear: both; }
+      #visual2 .inner .list h2 {
+        width: 130px;
+        font: 28px/1 'arial';
+        color: #ddd;
+        margin-bottom: 30px; }
+        #visual2 .inner .list h2::before {
+          content: '';
+          display: block;
+          width: 80px;
+          height: 2px;
+          background: #eee;
+          margin-bottom: 20px; }
+      #visual2 .inner .list ul {
+        width: 100%;
+        position: absolute;
+        bottom: 30px;
+        left: 30px; }
+        #visual2 .inner .list ul li {
+          float: left;
+          width: calc(100% / 4 - 20px); }
+          #visual2 .inner .list ul li a {
+            font: bold 15px/1 'arial';
+            color: #ccc; }
+          #visual2 .inner .list ul li > span {
+            display: block;
+            margin-top: 5px;
+            font: 14px/1 'arial';
+            color: #999; }
+      #visual2 .inner .list > span {
+        position: absolute;
+        bottom: -40px;
+        left: 0;
+        font: bold 14px/1 'arial';
+        color: #333; }
+    #visual2 .inner .textBox {
+      width: 100%;
+      height: 420px;
+      position: absolute;
+      bottom: 0;
+      left: 100%;
+      overflow: hidden;
+      transition: 1.5s; }
+      #visual2 .inner .textBox.on {
+        left: 0;
+        opacity: 1; }
+      #visual2 .inner .textBox > article {
+        width: 250px;
+        height: 90%;
+        float: left;
+        position: absolute;
+        top: 45%;
+        transform: translate(-50%, -50%);
+        backdrop-filter: blur(5px);
+        transition: 1s;
+        z-index: 4; }
+        #visual2 .inner .textBox > article:nth-of-type(1) {
+          left: 58%; }
+        #visual2 .inner .textBox > article:nth-of-type(2) {
+          left: calc(58% + 250px); }
+        #visual2 .inner .textBox > article:nth-of-type(3) {
+          left: calc(58% + 500px); }
+        #visual2 .inner .textBox > article:nth-of-type(4) {
+          left: calc(58% + 750px); }
+        #visual2 .inner .textBox > article:nth-of-type(5) {
+          left: calc(58% + 1000px); }
+        #visual2 .inner .textBox > article:hover .pic video {
+          opacity: 0.9; }
+        #visual2 .inner .textBox > article:hover .text p {
+          color: #fff; }
+        #visual2 .inner .textBox > article:hover .text h3 {
+          color: #fff;
+          border-bottom: 1.5px solid #fff; }
+        #visual2 .inner .textBox > article:hover .text span a, #visual2 .inner .textBox > article:hover .text i {
+          color: #fff; }
+        #visual2 .inner .textBox > article > .pic {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 2; }
+          #visual2 .inner .textBox > article > .pic video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s;
+            opacity: 0;
+            filter: brightness(0.5); }
+        #visual2 .inner .textBox > article .text {
+          width: 160px;
+          height: 100%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          padding: 50px 0;
+          transform: translate(-50%, -50%);
+          z-index: 2; }
+          #visual2 .inner .textBox > article .text > p {
+            font: 14px/1 'arial';
+            color: #ff5b20;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            z-index: 2; }
+          #visual2 .inner .textBox > article .text h3 {
+            font: bold 28px/1.4 "Rajdhani";
+            color: #111;
+            z-index: 2;
+            border-bottom: 1.5px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 20px; }
+          #visual2 .inner .textBox > article .text span {
+            display: block;
+            width: 100%;
+            position: relative;
+            z-index: 2; }
+            #visual2 .inner .textBox > article .text span:hover a {
+              font-size: 14px; }
+            #visual2 .inner .textBox > article .text span:hover i {
+              transform: translateX(-20px); }
+            #visual2 .inner .textBox > article .text span a {
+              font: 13px/1 'arial';
+              color: #222;
+              transition: 0.5s; }
+              #visual2 .inner .textBox > article .text span a i {
+                font-size: 14px;
+                color: #222;
+                position: absolute;
+                top: 50%;
+                right: 0px;
+                margin-top: -6px;
+                transition: 0.5s; }
+  #visual2 .rolling {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transition: 1s; }
+    #visual2 .rolling article {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0px;
+      left: 0;
+      transition: 1s;
+      z-index: 1; }
+      #visual2 .rolling article > .pic {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: 2s; }
+        #visual2 .rolling article > .pic video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover; }
+      #visual2 .rolling article:nth-of-type(1) .pic {
+        clip-path: ellipse(25% 50% at -5% 50%); }
+      #visual2 .rolling article.upper {
+        z-index: 3; }
+      #visual2 .rolling article.lower {
+        z-index: 2; }
+
 /*# sourceMappingURL=style.css.map */
