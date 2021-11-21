@@ -1,17 +1,33 @@
-$(".textBox>article").on("click", function(){
-    let i = $(this).index();
-    $(this).appendTo(".textBox");
-    $(".rolling>article").eq(i).appendTo(".rolling");
+$(".prev").on("click", function(e){
+    e.preventDefault();
     
     $("article.upper").removeClass("upper").addClass("lower");
-    $(".rolling>article").eq(i).addClass("upper");
+    $(".rolling>article").first().next().addClass("upper");
+    $(".textBox>article").removeClass("on");
+    $(".textBox>article").first().next().addClass("on");
+
+    $(".textBox>article").first().appendTo(".textBox");
+    $(".rolling>article").first().appendTo(".rolling");
     
     setTimeout(function(){
         $("article.lower").removeClass("lower");
     }, 1000);
+});
 
-    let vid = $(this).find("video").attr("src");
-    $(".rolling>article").children().find("video").attr({ src: vid });
+$(".next").on("click", function(e){
+    e.preventDefault();
+    
+    $("article.upper").removeClass("upper").addClass("lower");
+    $(".rolling>article").last().addClass("upper");
+    $(".textBox>article").removeClass("on");
+    $(".textBox>article").last().addClass("on");
+
+    $(".textBox>article").last().prependTo(".textBox");
+    $(".rolling>article").last().prependTo(".rolling");
+    
+    setTimeout(function(){
+        $("article.lower").removeClass("lower");
+    }, 1000);
 });
 
 $(window).on("load", function(){

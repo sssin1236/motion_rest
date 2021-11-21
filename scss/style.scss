@@ -95,7 +95,7 @@
         }
 
         .textBox{
-            width: 100%; height: 320px;
+            width: 100%; height: 420px;
             position: absolute;
             bottom: 0; left: 100%;
             overflow: hidden;
@@ -112,7 +112,6 @@
                 position: absolute;
                 top: 45%;
                 transform: translate(-50%, -50%);
-                backdrop-filter: blur(5px);
                 transition: 1s;
                 z-index: 4;
 
@@ -121,6 +120,27 @@
                 &:nth-of-type(3){ left: calc(58% + 500px); }
                 &:nth-of-type(4){ left: calc(58% + 750px); }
                 &:nth-of-type(5){ left: calc(58% + 1000px); }
+
+                &.on{
+                    .pic video{
+                        opacity: 0.9;
+                    }
+
+                    .text{
+                        p{
+                            color: #fff;
+                        }
+
+                        h3{
+                            color: #fff;
+                            border-bottom: 1.5px solid #fff; 
+                        }
+
+                        span a, i{
+                            color: #fff;
+                        }
+                    }
+                }
     
                 &:hover{
                     .pic video{
@@ -148,11 +168,12 @@
                     position: absolute;
                     top: 0; left: 0;
                     z-index: 2;
+                    transition: 1s;
                     
                     video{
                         width: 100%; height: 100%;
                         object-fit: cover;
-                        transition: all 0.5s;
+                        transition: 1s;
                         opacity: 0;
                         filter: brightness(0.5);
                     }
@@ -165,6 +186,7 @@
                     padding: 50px 0;
                     transform: translate(-50%, -50%);
                     z-index: 2;
+                    transition: 1s;
 
                     >p{
                         font: 14px/1 'arial';
