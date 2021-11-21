@@ -95,7 +95,7 @@
         }
 
         .textBox{
-            width: 100%; height: 420px;
+            width: 100%; height: 320px;
             position: absolute;
             bottom: 0; left: 100%;
             overflow: hidden;
@@ -218,6 +218,66 @@
                 
             }
             
+            .prev, .next{
+                display: inline-block;
+                width: 40px; height: 40px;
+                position: absolute;
+                bottom: 50px; left: 35%;
+                text-align: center;
+
+                &::before{
+                    content: '';
+                    display: block;
+                    width: 15px; height: 1px;
+                    background: #111;
+                    position: absolute;
+                    top: 20px; left: 12px;
+                    transform-origin: left center;
+                    transform: rotate(-30deg);
+                }
+
+                &::after{
+                    content: '';
+                    display: block;
+                    width: 15px; height: 1px;
+                    background: #111;
+                    position: absolute;
+                    top: 20px; left: 12px;
+                    transform-origin: left center;
+                    transform: rotate(30deg);
+                }
+
+                i{
+                    font-size: 40px;
+                    color: #111;
+                }
+            }
+
+            .next{
+                left: 40%;
+
+                &::before{
+                    content: '';
+                    display: block;
+                    width: 15px; height: 1px;
+                    background: #111;
+                    position: absolute;
+                    top: 20px; left: 12px;
+                    transform-origin: right center;
+                    transform: rotate(-30deg);
+                }
+
+                &::after{
+                    content: '';
+                    display: block;
+                    width: 15px; height: 1px;
+                    background: #111;
+                    position: absolute;
+                    top: 20px; left: 12px;
+                    transform-origin: right center;
+                    transform: rotate(30deg);
+                }
+            }
         }
 
     }
@@ -321,7 +381,6 @@
         margin: 0 auto;
         padding-top: 170px;
         position: relative;
-        z-index: 4;
 
         h1{
             font: bold 70px/1 'arial';
@@ -392,206 +451,123 @@
             }
         }
 
-        .textBox{
+        .wrap{
             width: 100%; height: 420px;
             position: absolute;
-            bottom: 0; left: 100%;
+            bottom: 0; left: 0;
             overflow: hidden;
-            transition: 1.5s;
 
-            &.on{
-                left: 0;
-                opacity: 1;
-            }
+            .rolling{
+                width: calc(250px * 5); height: 100%;
+                position: relative;
+                right: 0%;
 
-            >article{
-                width: 250px; height: 90%;
-                float: left;
-                position: absolute;
-                top: 45%;
-                transform: translate(-50%, -50%);
-                backdrop-filter: blur(5px);
-                transition: 1s;
-                z-index: 4;
-
-                &:nth-of-type(1){ left: 58%; }
-                &:nth-of-type(2){ left: calc(58% + 250px); }
-                &:nth-of-type(3){ left: calc(58% + 500px); }
-                &:nth-of-type(4){ left: calc(58% + 750px); }
-                &:nth-of-type(5){ left: calc(58% + 1000px); }
-    
-                &:hover{
-                    .pic video{
-                        opacity: 0.9;
-                    }
-
-                    .text{
-                        p{
-                            color: #fff;
-                        }
-
-                        h3{
-                            color: #fff;
-                            border-bottom: 1.5px solid #fff; 
-                        }
-
-                        span a, i{
-                            color: #fff;
-                        }
-                    }
+                &::after{
+                    content: ''; display: block; clear: both;
                 }
-
-                >.pic{
-                    width: 100%; height: 100%;
-                    position: absolute;
-                    top: 0; left: 0;
-                    z-index: 2;
-                    
-                    video{
+    
+                article{
+                    width: 250px; height: 90%;
+                    float: left;
+                    position: relative;
+                    transition: 0.5s;
+    
+                    &:hover{
+                        .pic img{
+                            opacity: 0.9;
+                        }
+    
+                        .text{
+                            p{
+                                color: #fff;
+                            }
+    
+                            h3{
+                                color: #fff;
+                                border-bottom: 1.5px solid #fff; 
+                            }
+    
+                            span a, i{
+                                color: #fff;
+                            }
+                        }
+                    }
+    
+                    .pic{
                         width: 100%; height: 100%;
-                        object-fit: cover;
-                        transition: all 0.5s;
-                        opacity: 0;
-                        filter: brightness(0.5);
-                    }
-                }
-
-                .text{
-                    width: 160px; height: 100%;
-                    position: absolute;
-                    top: 50%; left: 50%;
-                    padding: 50px 0;
-                    transform: translate(-50%, -50%);
-                    z-index: 2;
-
-                    >p{
-                        font: 14px/1 'arial';
-                        color: $mainCol;
-                        margin-top: 30px;
-                        margin-bottom: 20px;
-                        z-index: 2;
+                        position: absolute;
+                        top: 0; left: 0;
+                        z-index: 1;
+                        
+                        img{
+                            width: 100%; height: 100%;
+                            object-fit: cover;
+                            transition: all 0.5s;
+                            opacity: 0;
+                            filter: brightness(0.5);
+                        }
                     }
     
-                    h3{
-                        font: bold 28px/1.4 $mainFon;
-                        color: #111;
+                    .text{
+                        width: 160px; height: 100%;
+                        position: absolute;
+                        top: 50%; left: 50%;
+                        padding: 50px 0;
+                        transform: translate(-50%, -50%);
                         z-index: 2;
-                        border-bottom: 1.5px solid #333;
-                        padding-bottom: 20px;
-                        margin-bottom: 20px;
+    
+                        >p{
+                            font: 14px/1 'arial';
+                            color: $mainCol;
+                            margin-top: 30px;
+                            margin-bottom: 20px;
+                            z-index: 2;
+                        }
+        
+                        h3{
+                            font: bold 28px/1.4 $mainFon;
+                            color: #111;
+                            z-index: 2;
+                            border-bottom: 1.5px solid #333;
+                            padding-bottom: 20px;
+                            margin-bottom: 20px;
+                        }
+                        
+                        span{
+                            display: block;
+                            width: 100%;
+                            position: relative;
+                            z-index: 2;
+    
+                            &:hover{
+                                a{
+                                    font-size: 14px;
+                                }
+    
+                                i{
+                                    transform: translateX(-20px);
+                                }
+                            }
+        
+                            a{
+                                font: 13px/1 'arial';
+                                color: #222;
+                                transition: 0.5s;
+        
+                                i{
+                                    font-size: 14px;
+                                    color: #222;
+                                    position: absolute;
+                                    top: 50%; right:0px;
+                                    margin-top: -6px;
+                                    transition: 0.5s;
+                                }
+                            }
+                        }
                     }
                     
-                    span{
-                        display: block;
-                        width: 100%;
-                        position: relative;
-                        z-index: 2;
-
-                        &:hover{
-                            a{
-                                font-size: 14px;
-                            }
-
-                            i{
-                                transform: translateX(-20px);
-                            }
-                        }
-    
-                        a{
-                            font: 13px/1 'arial';
-                            color: #222;
-                            transition: 0.5s;
-    
-                            i{
-                                font-size: 14px;
-                                color: #222;
-                                position: absolute;
-                                top: 50%; right:0px;
-                                margin-top: -6px;
-                                transition: 0.5s;
-                            }
-                        }
-                    }
-                }
-                
-            }
-            
-        }
-
-    }
-
-    .rolling{
-        width: 100%; height: 100vh;
-        position: absolute;
-        top: 0px; left: 0px;
-        transition: 1s;
-
-        article{
-            width: 100%; height: 100%;
-            position: absolute;
-            top: 0px; left: 0;
-            transition: 1s;
-            z-index: 1;
-
-            >.pic{
-                width: 100%; height: 100%;
-                position: absolute;
-                top: 0; left: 0;
-                transition: 2s;
-                
-                video{
-                    width: 100%; height: 100%;
-                    object-fit: cover;
                 }
             }
-
-            &:nth-of-type(1) .pic {
-                clip-path: ellipse(25% 50% at -5% 50%);
-            }
-            
-            // &:nth-of-type(2) .pic {
-            //     clip-path: polygon(61% 65%, 72% 65%, 72% 85%, 61% 85%);
-            // }
-
-            // &:nth-of-type(3) .pic {
-            //     clip-path: polygon(72% 65%, 83% 65%, 83% 85%, 72% 85%);
-            // }
-
-            // &:nth-of-type(4) .pic {
-            //     clip-path: polygon(83% 65%, 94% 65%, 94% 85%, 83% 85%);
-            // }
-            // // &:nth-of-type(5) .pic {
-            // //     clip-path: polygon(94% 65%, 105% 65%, 105% 85%, 94% 85%);
-            // // }
-
-            // &.upper, &.lower{
-            //     &:nth-of-type(1) .pic{
-            //         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-            //         opacity: 1;
-            //     }
-                
-            //     &:nth-of-type(2) .pic{
-            //         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-            //         opacity: 1;
-            //     }
-
-            //     &:nth-of-type(3) .pic{
-            //         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-            //         opacity: 1;
-            //     }
-
-            //     &:nth-of-type(4) .pic{
-            //         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-            //         opacity: 1;
-            //     }
-
-            //     // &:nth-of-type(5) .pic{
-            //     //     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-            //     //     opacity: 1;
-            //     // }
-            // }
-            &.upper{ z-index: 3; }
-            &.lower{ z-index: 2; }
         }
     }
 }
