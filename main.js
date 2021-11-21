@@ -13,3 +13,7 @@ $(".textBox>article").on("click", function(){
     let vid = $(this).find("video").attr("src");
     $(".rolling>article").children().find("video").attr({ src: vid });
 });
+
+$(window).on("load", function(){
+    $(".textBox").addClass("on");
+});
