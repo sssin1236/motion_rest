@@ -46,7 +46,6 @@ $(window).on("load", function(){
 
 
 
-
 function numCount1() {
     num1++;
     if (num1 > 235) {
