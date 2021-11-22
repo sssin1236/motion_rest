@@ -89,26 +89,91 @@ a {
         color: #333; }
     #visual .inner .textBox {
       width: 100%;
-      height: 420px;
+      height: 320px;
       position: absolute;
-      bottom: 0;
+      bottom: 30px;
       left: 100%;
       overflow: hidden;
       transition: 1.5s; }
       #visual .inner .textBox.on {
         left: 0;
         opacity: 1; }
-      #visual .inner .textBox > article {
+      #visual .inner .textBox .btnBox {
         width: 250px;
-        height: 90%;
+        height: 100%;
         float: left;
         position: absolute;
-        top: 45%;
+        top: 0%;
+        left: 0;
+        background: #111; }
+        #visual .inner .textBox .btnBox .prev, #visual .inner .textBox .btnBox .next {
+          display: inline-block;
+          width: 40px;
+          height: 40px;
+          position: absolute;
+          bottom: 50px;
+          left: 35%;
+          text-align: center; }
+          #visual .inner .textBox .btnBox .prev::before, #visual .inner .textBox .btnBox .next::before {
+            content: '';
+            display: block;
+            width: 15px;
+            height: 1px;
+            background: #111;
+            position: absolute;
+            top: 20px;
+            left: 12px;
+            transform-origin: left center;
+            transform: rotate(-30deg); }
+          #visual .inner .textBox .btnBox .prev::after, #visual .inner .textBox .btnBox .next::after {
+            content: '';
+            display: block;
+            width: 15px;
+            height: 1px;
+            background: #111;
+            position: absolute;
+            top: 20px;
+            left: 12px;
+            transform-origin: left center;
+            transform: rotate(30deg); }
+          #visual .inner .textBox .btnBox .prev i, #visual .inner .textBox .btnBox .next i {
+            font-size: 40px;
+            color: #111; }
+        #visual .inner .textBox .btnBox .next {
+          left: 40%; }
+          #visual .inner .textBox .btnBox .next::before {
+            content: '';
+            display: block;
+            width: 15px;
+            height: 1px;
+            background: #111;
+            position: absolute;
+            top: 20px;
+            left: 12px;
+            transform-origin: right center;
+            transform: rotate(-30deg); }
+          #visual .inner .textBox .btnBox .next::after {
+            content: '';
+            display: block;
+            width: 15px;
+            height: 1px;
+            background: #111;
+            position: absolute;
+            top: 20px;
+            left: 12px;
+            transform-origin: right center;
+            transform: rotate(30deg); }
+      #visual .inner .textBox > article {
+        width: 250px;
+        height: 100%;
+        float: left;
+        position: absolute;
+        top: 50%;
         transform: translate(-50%, -50%);
         transition: 1s;
         z-index: 4; }
         #visual .inner .textBox > article:nth-of-type(1) {
-          left: 58%; }
+          left: 250px; }
         #visual .inner .textBox > article:nth-of-type(2) {
           left: calc(58% + 250px); }
         #visual .inner .textBox > article:nth-of-type(3) {
@@ -194,63 +259,6 @@ a {
                 right: 0px;
                 margin-top: -6px;
                 transition: 0.5s; }
-      #visual .inner .textBox .prev, #visual .inner .textBox .next {
-        display: inline-block;
-        width: 40px;
-        height: 40px;
-        position: absolute;
-        bottom: 50px;
-        left: 35%;
-        text-align: center; }
-        #visual .inner .textBox .prev::before, #visual .inner .textBox .next::before {
-          content: '';
-          display: block;
-          width: 15px;
-          height: 1px;
-          background: #111;
-          position: absolute;
-          top: 20px;
-          left: 12px;
-          transform-origin: left center;
-          transform: rotate(-30deg); }
-        #visual .inner .textBox .prev::after, #visual .inner .textBox .next::after {
-          content: '';
-          display: block;
-          width: 15px;
-          height: 1px;
-          background: #111;
-          position: absolute;
-          top: 20px;
-          left: 12px;
-          transform-origin: left center;
-          transform: rotate(30deg); }
-        #visual .inner .textBox .prev i, #visual .inner .textBox .next i {
-          font-size: 40px;
-          color: #111; }
-      #visual .inner .textBox .next {
-        left: 40%; }
-        #visual .inner .textBox .next::before {
-          content: '';
-          display: block;
-          width: 15px;
-          height: 1px;
-          background: #111;
-          position: absolute;
-          top: 20px;
-          left: 12px;
-          transform-origin: right center;
-          transform: rotate(-30deg); }
-        #visual .inner .textBox .next::after {
-          content: '';
-          display: block;
-          width: 15px;
-          height: 1px;
-          background: #111;
-          position: absolute;
-          top: 20px;
-          left: 12px;
-          transform-origin: right center;
-          transform: rotate(30deg); }
   #visual .rolling {
     width: 100%;
     height: 100vh;
