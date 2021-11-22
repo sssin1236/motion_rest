@@ -118,24 +118,63 @@
             }
 
             .btnBox{
-                width: 250px; height: 100%;
+                width: 250px; height: 290px;
+                padding: 50px 20px; 
                 float: left;
                 position: absolute;
-                top: 0%; left: -250px;
-                border: 1px solid #111;
+                bottom: 0; left: -250px;
+                background: #111;
                 opacity: 0;
                 transition: 1s;
 
+                h3{
+                    font: 30px/1.4 $mainFon;
+                    color: #fff;
+                    padding-bottom: 30px;
+                    border-bottom: 1px solid #eee;
+                }
+
+                ul{
+                    width: 100%;
+                    &::after{
+                        content: ''; display: block; clear: both;
+                    }
+
+                    li{
+                        width: 33.333%;
+                        padding: 10px;
+                        border-right: 1px solid #eee;
+                        float: left;
+
+                        &:last-child{
+                            border-right: none;
+                        }
+
+                        nav{
+                            font: 15px/1 'Roboto';
+                            color: #eee;
+                        }
+
+                        p{
+                            font: 20px/1 $mainFon;
+                            color: #fff;
+                            margin-top: 20px;
+                            text-align: center;
+                        }
+                    }
+                }
+
                 .prev, .next{
                     display: inline-block;
-                    width: 40px; height: 40px;
+                    width: 30px; height: 30px;
+                    background: #111;
                     position: absolute;
-                    bottom: 50px; left: 35%;
+                    top: -30px; right: 30px;
                     text-align: center;
     
                     &::before{
                         content: '';
-                        display: block;
+                        display: none;
                         width: 15px; height: 1px;
                         background: #111;
                         position: absolute;
@@ -146,7 +185,7 @@
     
                     &::after{
                         content: '';
-                        display: block;
+                        display: none;
                         width: 15px; height: 1px;
                         background: #111;
                         position: absolute;
@@ -156,17 +195,18 @@
                     }
     
                     i{
-                        font-size: 40px;
-                        color: #111;
+                        font-size: 20px;
+                        color: #fff;
+                        line-height: 30px;
                     }
                 }
     
                 .next{
-                    left: 40%;
+                    right: 0%;
     
                     &::before{
                         content: '';
-                        display: block;
+                        display: none;
                         width: 15px; height: 1px;
                         background: #111;
                         position: absolute;
@@ -177,7 +217,7 @@
     
                     &::after{
                         content: '';
-                        display: block;
+                        display: none;
                         width: 15px; height: 1px;
                         background: #111;
                         position: absolute;
@@ -251,6 +291,7 @@
                     position: absolute;
                     top: 0; left: 0;
                     z-index: 2;
+                    backdrop-filter: blur(2px);
                     transition: 1s;
                     
                     video{

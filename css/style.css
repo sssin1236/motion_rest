@@ -116,25 +116,53 @@ a {
         opacity: 1; }
       #visual .inner .textBox .btnBox {
         width: 250px;
-        height: 100%;
+        height: 290px;
+        padding: 50px 20px;
         float: left;
         position: absolute;
-        top: 0%;
+        bottom: 0;
         left: -250px;
-        border: 1px solid #111;
+        background: #111;
         opacity: 0;
         transition: 1s; }
+        #visual .inner .textBox .btnBox h3 {
+          font: 30px/1.4 "Rajdhani";
+          color: #fff;
+          padding-bottom: 30px;
+          border-bottom: 1px solid #eee; }
+        #visual .inner .textBox .btnBox ul {
+          width: 100%; }
+          #visual .inner .textBox .btnBox ul::after {
+            content: '';
+            display: block;
+            clear: both; }
+          #visual .inner .textBox .btnBox ul li {
+            width: 33.333%;
+            padding: 10px;
+            border-right: 1px solid #eee;
+            float: left; }
+            #visual .inner .textBox .btnBox ul li:last-child {
+              border-right: none; }
+            #visual .inner .textBox .btnBox ul li nav {
+              font: 15px/1 'Roboto';
+              color: #eee; }
+            #visual .inner .textBox .btnBox ul li p {
+              font: 20px/1 "Rajdhani";
+              color: #fff;
+              margin-top: 20px;
+              text-align: center; }
         #visual .inner .textBox .btnBox .prev, #visual .inner .textBox .btnBox .next {
           display: inline-block;
-          width: 40px;
-          height: 40px;
+          width: 30px;
+          height: 30px;
+          background: #111;
           position: absolute;
-          bottom: 50px;
-          left: 35%;
+          top: -30px;
+          right: 30px;
           text-align: center; }
           #visual .inner .textBox .btnBox .prev::before, #visual .inner .textBox .btnBox .next::before {
             content: '';
-            display: block;
+            display: none;
             width: 15px;
             height: 1px;
             background: #111;
@@ -145,7 +173,7 @@ a {
             transform: rotate(-30deg); }
           #visual .inner .textBox .btnBox .prev::after, #visual .inner .textBox .btnBox .next::after {
             content: '';
-            display: block;
+            display: none;
             width: 15px;
             height: 1px;
             background: #111;
@@ -155,13 +183,14 @@ a {
             transform-origin: left center;
             transform: rotate(30deg); }
           #visual .inner .textBox .btnBox .prev i, #visual .inner .textBox .btnBox .next i {
-            font-size: 40px;
-            color: #111; }
+            font-size: 20px;
+            color: #fff;
+            line-height: 30px; }
         #visual .inner .textBox .btnBox .next {
-          left: 40%; }
+          right: 0%; }
           #visual .inner .textBox .btnBox .next::before {
             content: '';
-            display: block;
+            display: none;
             width: 15px;
             height: 1px;
             background: #111;
@@ -172,7 +201,7 @@ a {
             transform: rotate(-30deg); }
           #visual .inner .textBox .btnBox .next::after {
             content: '';
-            display: block;
+            display: none;
             width: 15px;
             height: 1px;
             background: #111;
@@ -231,6 +260,7 @@ a {
           top: 0;
           left: 0;
           z-index: 2;
+          backdrop-filter: blur(2px);
           transition: 1s; }
           #visual .inner .textBox > article > .pic video {
             width: 100%;
