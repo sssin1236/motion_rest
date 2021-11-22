@@ -97,21 +97,34 @@
         .textBox{
             width: 100%; height: 320px;
             position: absolute;
-            bottom: 30px; left: 100%;
+            bottom: 30px; left: 0;
             overflow: hidden;
             transition: 1.5s;
+            transition-delay: 0.5s;
 
             &.on{
-                left: 0;
-                opacity: 1;
+                .btnBox{
+                    left: 0px;
+                    opacity: 1;
+                }
+
+                article{
+                    &:nth-of-type(1){ left: 375px; opacity: 1;}
+                    &:nth-of-type(2){ left: calc(375px + 250px); opacity: 1}
+                    &:nth-of-type(3){ left: calc(375px + 500px); opacity: 1}
+                    &:nth-of-type(4){ left: calc(375px + 750px); opacity: 1}
+                    &:nth-of-type(5){ left: calc(375px + 1000px); opacity: 1}
+                }
             }
 
             .btnBox{
                 width: 250px; height: 100%;
                 float: left;
                 position: absolute;
-                top: 0%; left: 0;
-                background: #111;
+                top: 0%; left: -250px;
+                border: 1px solid #111;
+                opacity: 0;
+                transition: 1s;
 
                 .prev, .next{
                     display: inline-block;
@@ -182,13 +195,14 @@
                 top: 50%;
                 transform: translate(-50%, -50%);
                 transition: 1s;
+                opacity: 0;
                 z-index: 4;
 
-                &:nth-of-type(1){ left: 250px; }
-                &:nth-of-type(2){ left: calc(58% + 250px); }
-                &:nth-of-type(3){ left: calc(58% + 500px); }
-                &:nth-of-type(4){ left: calc(58% + 750px); }
-                &:nth-of-type(5){ left: calc(58% + 1000px); }
+                &:nth-of-type(1){ left: calc(375px + 250px); transition-delay: 0.5s; }
+                &:nth-of-type(2){ left: calc(375px + 500px); transition-delay: 0.7s; }
+                &:nth-of-type(3){ left: calc(375px + 750px); transition-delay: 0.9s; }
+                &:nth-of-type(4){ left: calc(375px + 1000px); transition-delay: 1.2s; }
+                &:nth-of-type(5){ left: calc(375px + 1250px); transition-delay: 1.4s; }
 
                 &.on{
                     .pic video{

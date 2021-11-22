@@ -92,11 +92,27 @@ a {
       height: 320px;
       position: absolute;
       bottom: 30px;
-      left: 100%;
+      left: 0;
       overflow: hidden;
-      transition: 1.5s; }
-      #visual .inner .textBox.on {
-        left: 0;
+      transition: 1.5s;
+      transition-delay: 0.5s; }
+      #visual .inner .textBox.on .btnBox {
+        left: 0px;
+        opacity: 1; }
+      #visual .inner .textBox.on article:nth-of-type(1) {
+        left: 375px;
+        opacity: 1; }
+      #visual .inner .textBox.on article:nth-of-type(2) {
+        left: calc(375px + 250px);
+        opacity: 1; }
+      #visual .inner .textBox.on article:nth-of-type(3) {
+        left: calc(375px + 500px);
+        opacity: 1; }
+      #visual .inner .textBox.on article:nth-of-type(4) {
+        left: calc(375px + 750px);
+        opacity: 1; }
+      #visual .inner .textBox.on article:nth-of-type(5) {
+        left: calc(375px + 1000px);
         opacity: 1; }
       #visual .inner .textBox .btnBox {
         width: 250px;
@@ -104,8 +120,10 @@ a {
         float: left;
         position: absolute;
         top: 0%;
-        left: 0;
-        background: #111; }
+        left: -250px;
+        border: 1px solid #111;
+        opacity: 0;
+        transition: 1s; }
         #visual .inner .textBox .btnBox .prev, #visual .inner .textBox .btnBox .next {
           display: inline-block;
           width: 40px;
@@ -171,17 +189,23 @@ a {
         top: 50%;
         transform: translate(-50%, -50%);
         transition: 1s;
+        opacity: 0;
         z-index: 4; }
         #visual .inner .textBox > article:nth-of-type(1) {
-          left: 250px; }
+          left: calc(375px + 250px);
+          transition-delay: 0.5s; }
         #visual .inner .textBox > article:nth-of-type(2) {
-          left: calc(58% + 250px); }
+          left: calc(375px + 500px);
+          transition-delay: 0.7s; }
         #visual .inner .textBox > article:nth-of-type(3) {
-          left: calc(58% + 500px); }
+          left: calc(375px + 750px);
+          transition-delay: 0.9s; }
         #visual .inner .textBox > article:nth-of-type(4) {
-          left: calc(58% + 750px); }
+          left: calc(375px + 1000px);
+          transition-delay: 1.2s; }
         #visual .inner .textBox > article:nth-of-type(5) {
-          left: calc(58% + 1000px); }
+          left: calc(375px + 1250px);
+          transition-delay: 1.4s; }
         #visual .inner .textBox > article.on .pic video {
           opacity: 0.9; }
         #visual .inner .textBox > article.on .text p {
